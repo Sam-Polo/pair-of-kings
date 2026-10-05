@@ -1,13 +1,28 @@
-<!-- Таплинк «Пара Королей» v2 — вставить целиком в блок «HTML-код» -->
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@500;700&display=swap');
-  
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Пара Королей — Клуб спортивного покера</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@500;700&display=swap">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background: #000;
+    }
+
     .pk {
       position: relative;
-      max-width: 480px;
-      margin: 0 auto;
+      margin: 0;
       padding: 40px 20px 34px;
-      border-radius: 28px;
+      border-radius: 0;
       overflow: hidden;
       background: radial-gradient(120% 70% at 50% 0%, #3a0509 0%, #120203 45%, #000 100%);
       font-family: 'Montserrat', Arial, sans-serif;
@@ -15,12 +30,16 @@
       color: #fff;
       box-sizing: border-box;
       isolation: isolate;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-  
+
     .pk * {
       box-sizing: border-box;
     }
-  
+
     /* ---------- падающие короли ---------- */
     .pk-rain {
       position: absolute;
@@ -29,7 +48,7 @@
       z-index: 0;
       overflow: hidden;
     }
-  
+
     .pk-card {
       position: absolute;
       top: -120px;
@@ -44,7 +63,7 @@
       animation: pk-fall linear infinite;
       will-change: transform;
     }
-  
+
     .pk-card b {
       position: absolute;
       top: 3px;
@@ -52,7 +71,7 @@
       font-size: 13px;
       line-height: 1;
     }
-  
+
     .pk-card i {
       position: absolute;
       top: 17px;
@@ -61,7 +80,7 @@
       font-style: normal;
       line-height: 1;
     }
-  
+
     .pk-card::after {
       content: "♛";
       position: absolute;
@@ -72,11 +91,11 @@
       font-size: 26px;
       padding-top: 6px;
     }
-  
+
     .pk-card.h {
       color: #b3111c;
     }
-  
+
     .pk-card::before {
       content: "";
       position: absolute;
@@ -85,7 +104,7 @@
       border-radius: 4px;
       opacity: .25;
     }
-  
+
     @keyframes pk-fall {
       0% {
         transform: translateY(0) rotate(0deg) rotateY(0deg);
@@ -102,14 +121,14 @@
         opacity: 0;
       }
     }
-  
+
     .pk-card:nth-child(1) {
       left: 4%;
       animation-duration: 11s;
       animation-delay: 0s;
       --r: 220deg;
     }
-  
+
     .pk-card:nth-child(2) {
       left: 18%;
       animation-duration: 14s;
@@ -117,7 +136,7 @@
       --r: -180deg;
       transform: scale(.8);
     }
-  
+
     .pk-card:nth-child(3) {
       left: 33%;
       animation-duration: 12s;
@@ -125,14 +144,14 @@
       --r: 260deg;
       --o: .35;
     }
-  
+
     .pk-card:nth-child(4) {
       left: 50%;
       animation-duration: 16s;
       animation-delay: -9s;
       --r: -240deg;
     }
-  
+
     .pk-card:nth-child(5) {
       left: 66%;
       animation-duration: 10s;
@@ -140,14 +159,14 @@
       --r: 190deg;
       --o: .4;
     }
-  
+
     .pk-card:nth-child(6) {
       left: 82%;
       animation-duration: 13s;
       animation-delay: -7s;
       --r: -210deg;
     }
-  
+
     .pk-card:nth-child(7) {
       left: 10%;
       animation-duration: 15s;
@@ -155,14 +174,14 @@
       --r: 170deg;
       --o: .3;
     }
-  
+
     .pk-card:nth-child(8) {
       left: 42%;
       animation-duration: 12.5s;
       animation-delay: -8s;
       --r: -200deg;
     }
-  
+
     .pk-card:nth-child(9) {
       left: 74%;
       animation-duration: 17s;
@@ -170,14 +189,14 @@
       --r: 230deg;
       --o: .3;
     }
-  
+
     .pk-card:nth-child(10) {
       left: 90%;
       animation-duration: 11.5s;
       animation-delay: -10s;
       --r: -260deg;
     }
-  
+
     .pk-card:nth-child(11) {
       left: 26%;
       animation-duration: 18s;
@@ -185,7 +204,7 @@
       --r: 250deg;
       --o: .25;
     }
-  
+
     .pk-card:nth-child(12) {
       left: 58%;
       animation-duration: 14.5s;
@@ -193,13 +212,16 @@
       --r: -170deg;
       --o: .35;
     }
-  
+
     /* ---------- контент ---------- */
     .pk-in {
       position: relative;
       z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
     }
-  
+
     .pk-logo {
       width: 170px;
       height: 170px;
@@ -210,13 +232,13 @@
       box-shadow: 0 0 0 3px #fff, 0 0 0 6px #b3111c, 0 0 40px rgba(179, 17, 28, .7);
       animation: pk-glow 3s ease-in-out infinite;
     }
-  
+
     @keyframes pk-glow {
       50% {
         box-shadow: 0 0 0 3px #fff, 0 0 0 6px #b3111c, 0 0 60px rgba(179, 17, 28, 1);
       }
     }
-  
+
     .pk-title {
       font-family: 'Cinzel', serif;
       font-weight: 800;
@@ -230,7 +252,7 @@
       background-clip: text;
       color: transparent;
     }
-  
+
     .pk-sub {
       display: inline-block;
       margin: 12px 0 0;
@@ -243,18 +265,18 @@
       color: #ddd;
       background: rgba(255, 255, 255, .04);
     }
-  
+
     .pk-text {
       font-size: 16px;
       line-height: 1.5;
       margin: 24px 0 22px;
       color: #f1f1f1;
     }
-  
+
     .pk-text strong {
       color: #fff;
     }
-  
+
     .pk-label {
       font-size: 10px;
       letter-spacing: 4px;
@@ -265,7 +287,7 @@
       align-items: center;
       gap: 10px;
     }
-  
+
     .pk-label::before,
     .pk-label::after {
       content: "";
@@ -273,7 +295,7 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .3), transparent);
     }
-  
+
     /* ---------- кнопки ---------- */
     .pk-btn {
       position: relative;
@@ -294,7 +316,7 @@
       backdrop-filter: blur(8px);
       transition: transform .2s, border-color .2s, background .2s;
     }
-  
+
     .pk-btn::after {
       content: "";
       position: absolute;
@@ -306,28 +328,28 @@
       transform: skewX(-20deg);
       animation: pk-shine 4.5s ease-in-out infinite;
     }
-  
+
     .pk-btn:nth-of-type(2)::after {
       animation-delay: 1.1s;
     }
-  
+
     .pk-btn:nth-of-type(3)::after {
       animation-delay: 2.2s;
     }
-  
+
     .pk-btn:nth-of-type(4)::after {
       animation-delay: 3.3s;
     }
-  
+
     .pk-btn:nth-of-type(5)::after {
       animation-delay: .5s;
     }
-  
+
     .pk-dir {
       border-color: rgba(179, 17, 28, .55);
       background: linear-gradient(90deg, rgba(179, 17, 28, .22), rgba(255, 255, 255, .04));
     }
-  
+
     @keyframes pk-shine {
       0%, 60% {
         left: -60%;
@@ -336,17 +358,17 @@
         left: 130%;
       }
     }
-  
+
     .pk-btn:hover {
       transform: translateY(-2px) scale(1.01);
       border-color: #b3111c;
       background: rgba(179, 17, 28, .18);
     }
-  
+
     .pk-btn:active {
       transform: scale(.98);
     }
-  
+
     .pk-ic {
       flex-shrink: 0;
       width: 44px;
@@ -356,61 +378,61 @@
       align-items: center;
       justify-content: center;
     }
-  
+
     .pk-ic svg {
       width: 22px;
       height: 22px;
       fill: #fff;
     }
-  
+
     .pk-ic.red {
       background: linear-gradient(145deg, #e0303c, #8f0c16);
       box-shadow: 0 4px 14px rgba(179, 17, 28, .5);
     }
-  
+
     .pk-ic.wht {
       background: linear-gradient(145deg, #fff, #cfcfcf);
     }
-  
+
     .pk-ic.wht svg {
       fill: #000;
     }
-  
+
     .pk-bt {
       flex: 1;
       display: flex;
       flex-direction: column;
       line-height: 1.2;
     }
-  
+
     .pk-bt b {
       font-size: 15px;
       font-weight: 700;
     }
-  
+
     .pk-bt small {
       font-size: 11px;
       color: #aaa;
       margin-top: 3px;
       letter-spacing: .5px;
     }
-  
+
     .pk-arr {
       font-size: 18px;
       color: #b3111c;
       transition: transform .2s;
     }
-  
+
     .pk-btn:hover .pk-arr {
       transform: translateX(4px);
     }
-  
+
     .pk-stars {
       color: #e0303c;
       letter-spacing: 2px;
       font-size: 11px;
     }
-  
+
     /* ---------- подвал ---------- */
     .pk-foot {
       margin-top: 20px;
@@ -420,11 +442,11 @@
       color: #8a8a8a;
       text-transform: uppercase;
     }
-  
+
     .pk-foot span {
       color: #b3111c;
     }
-  
+
     /* ---------- уменьшенная анимация ---------- */
     @media (prefers-reduced-motion: reduce) {
       .pk-card,
@@ -432,15 +454,17 @@
       .pk-logo {
         animation: none;
       }
-  
+
       .pk-card {
         display: none;
       }
     }
   </style>
-  
+</head>
+<body>
+
   <div class="pk">
-  
+
     <!-- падающие короли -->
     <div class="pk-rain" aria-hidden="true">
       <div class="pk-card"><b>K</b><i>♠</i></div>
@@ -456,26 +480,24 @@
       <div class="pk-card"><b>K</b><i>♣</i></div>
       <div class="pk-card h"><b>K</b><i>♦</i></div>
     </div>
-  
+
     <div class="pk-in">
-  
-      <!-- ВАЖНО: вместо плейсхолдера в src вставьте ваш исходный data:image/webp;base64,... -->
       <img
         class="pk-logo"
         src="image.webp"
         alt="Пара Королей — Pair of Kings">
-  
+
       <h1 class="pk-title">Пара<br>Королей</h1>
       <div class="pk-sub">Клуб спортивного покера</div>
-  
+
       <p class="pk-text">
         <strong>Оставьте свой отзыв</strong><br>
         и подпишитесь на наши социальные сети
       </p>
-  
+
       <!-- ---------- Отзывы ---------- -->
       <div class="pk-label">Отзывы</div>
-  
+
       <a class="pk-btn" href="https://yandex.ru/maps/-/CXUbJSmc" target="_blank" rel="noopener">
         <span class="pk-ic red">
           <svg viewBox="0 0 24 24">
@@ -488,7 +510,7 @@
         </span>
         <span class="pk-arr">→</span>
       </a>
-  
+
       <a class="pk-btn" href="https://2gis.ru/domodedovo/search/pair%20of%20kings/firm/70000001118032115/37.767602%2C55.404236?m=37.767624%2C55.404246%2F17.02" target="_blank" rel="noopener">
         <span class="pk-ic wht">
           <svg viewBox="0 0 24 24">
@@ -501,7 +523,7 @@
         </span>
         <span class="pk-arr">→</span>
       </a>
-  
+
       <a class="pk-btn pk-dir" href="https://t.me/trivaylo" target="_blank" rel="noopener">
         <span class="pk-ic red">
           <svg viewBox="0 0 24 24">
@@ -514,10 +536,10 @@
         </span>
         <span class="pk-arr">→</span>
       </a>
-  
+
       <!-- ---------- Соцсети ---------- -->
       <div class="pk-label" style="margin-top: 18px;">Соцсети</div>
-  
+
       <a class="pk-btn" href="https://t.me/kk_pokerclub" target="_blank" rel="noopener">
         <span class="pk-ic red">
           <svg viewBox="0 0 24 24">
@@ -530,7 +552,7 @@
         </span>
         <span class="pk-arr">→</span>
       </a>
-  
+
       <a class="pk-btn" href="https://www.instagram.com/kk_pokerclub/" target="_blank" rel="noopener">
         <span class="pk-ic wht">
           <svg viewBox="0 0 24 24">
@@ -543,8 +565,11 @@
         </span>
         <span class="pk-arr">→</span>
       </a>
-  
+
       <div class="pk-foot">♠ Poker Club <span>·</span> Estd. 2026 <span>♥</span></div>
-  
+
     </div>
   </div>
+
+</body>
+</html>
